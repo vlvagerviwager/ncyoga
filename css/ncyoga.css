@@ -1,0 +1,46 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url('../fonts/Ubuntu-L.ttf');
+}
+
+@font-face {
+    font-family: chocoleta;
+    src: url('../fonts/chocoleta.ttf');
+}
+
+#logo-nav {
+	font-family: chocoleta, 'Georgia', serif;
+	font-size: 60px;
+	color: #333;
+	margin: 0 5px;
+}
+
+.logo {
+	font-family: chocoleta, 'Georgia', serif;
+}
+
+#main-img {
+	opacity: 0.6;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+body {
+    font-family: Ubuntu, 'Helvetica Neue', sans-serif;
+}
+
+h1, h2 {
+	letter-spacing: -1px;
+}
+
+h2 {
+	margin-bottom: 20px;
+}
+
+p {
+	line-height: 2.5;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
