@@ -8,9 +8,14 @@
     src: url('../fonts/chocoleta.ttf');
 }
 
-.font-chocoleta {
-	font-family: chocoleta, 'Georgia', serif;
-}
+body, .font-chocoleta { font-family: Ubuntu, 'Helvetica Neue', sans-serif; }
+h1, h2, h3 { font-family: Ubuntu, 'Helvetica Neue' }
+h1 { font-size: 40px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+p { font-size: 16px; }
+.font-chocoleta { font-family: chocoleta, 'Georgia', serif; }
+.centered-text { text-align: center; }
 
 #main-img-container { 
     width: 100%;
@@ -23,20 +28,10 @@
 	margin-top: -177px;
 }
 
-body { font-family: Ubuntu, 'Helvetica Neue', sans-serif; }
-
-h2 { font-family: Ubuntu, 'Helvetica Neue', sans-serif; font-size: 40px; }
-
-p { font-size: 16px; }
-
 .img-responsive {
 	width: 100%%;
 	margin: 0 auto;
 	display: block;
-}
-
-.centered-text {
-	text-align: center;
 }
 
 #logo-nav {
@@ -92,7 +87,3 @@ ul.nav > li { display: inline; margin-top: -63px; position: relative; z-index: 3
 
 	ul.nav { display: inline; float: left; clear: left; }
 }
-
-/*@media (min-width: 544px) {
-
-}*/
