@@ -12,7 +12,11 @@
 	font-family: chocoleta, 'Georgia', serif;
 	font-size: 60px;
 	color: #333;
-	margin: 0 5px;
+	text-align: center;
+	text-decoration: none;
+	margin: 30px 0 auto;
+	width: 100%;
+	display: inline-block;
 }
 
 .logo {
@@ -34,7 +38,7 @@ h2 { margin-bottom: 20px; }
 
 p { margin-bottom: 10px; font-size: 16px; }
 
-ul.nav > li { float: left; }
+ul.nav > li { display: inline; margin-top: -63px; }
 
 ul.nav li a {
     display: inline-block;
@@ -45,9 +49,17 @@ ul.nav li a {
     font-size: 17px;
 }
 
+ul.nav li:nth-child(1), .nav li:nth-child(2) {
+    float: left;
+}
+
+ul.nav li:nth-child(3), .nav li:nth-child(4) {
+    float: right;
+}
+
 nav {
 	margin: 0 auto;
-	width: 645px;
+	width: 700px;
 }
 
 .centre-div {
