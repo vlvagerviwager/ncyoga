@@ -81,7 +81,7 @@ nav { margin: 0 auto; }
 		display: block;
 		width: auto;
 		float: left;
-		margin-bottom: 15px;
+		margin: 30px 0 15px 15px;
 	}
 
 	ul.nav > li { display: block; margin: 10px; }
