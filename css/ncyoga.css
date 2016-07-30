@@ -19,24 +19,27 @@
 	display: inline-block;
 }
 
-.logo {
+.font-chocoleta {
 	font-family: chocoleta, 'Georgia', serif;
+}
+
+#main-img-container { 
+    width: 100%; 
+    height: 300px; 
+    overflow: hidden; 
+	margin-bottom: 20px;
 }
 
 #main-img {
 	opacity: 0.6;
-	-webkit-border-radius: 45px;
-	-moz-border-radius: 45px;
-	border-radius: 20px;
+	margin-top: -177px;
 }
 
 body { font-family: Ubuntu, 'Helvetica Neue', sans-serif; }
 
-h1, h2 { letter-spacing: -1px; }
+h2 { font-family: Ubuntu, 'Helvetica Neue', sans-serif; font-size: 40px; }
 
-h2 { margin-bottom: 20px; }
-
-p { margin-bottom: 10px; font-size: 16px; }
+p { font-size: 16px; }
 
 ul.nav > li { display: inline; margin-top: -63px; }
 
@@ -60,15 +63,20 @@ ul.nav li:nth-child(3), .nav li:nth-child(4) {
 nav {
 	margin: 0 auto;
 	width: 700px;
+	padding-bottom: 60px;
 }
 
-.centre-div {
-	margin: 0 auto;
+section {
+	margin: 40px auto;
 	width: 50%;
 }
 
 .img-responsive {
-	width: 50%;
+	width: 100%%;
 	margin: 0 auto;
 	display: block;
+}
+
+.centered-text {
+	text-align: center;
 }
