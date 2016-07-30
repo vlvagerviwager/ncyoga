@@ -48,9 +48,13 @@ p { font-size: 16px; }
 	margin: 30px 0 auto;
 	width: 100%;
 	display: inline-block;
+	position: relative;
+	z-index: 2;
 }
 
-nav { margin: 0 auto; }
+nav { margin: 0 auto; position: relative; z-index: 1;}
+
+ul.nav > li { display: inline; margin-top: -63px; position: relative; z-index: 3;}
 
 @media (min-width: 769px) {
 
