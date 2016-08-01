@@ -75,6 +75,9 @@ nav { width: 700px; }
 }
 
 @media (max-width: 768px) {
+	
+	section { margin: 40px 15px; width: auto; }
+
 	ul.nav {
 		display: block; 
 		text-align: center;
