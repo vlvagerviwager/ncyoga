@@ -1,3 +1,1 @@
-* Fix mobile
-* Add testimonials
-* Add gallery
+* Add photos to gallery
