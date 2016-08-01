@@ -51,7 +51,7 @@ nav { margin: 0 auto; position: relative; z-index: 1;}
 
 #nav-fill {
 	background-color: #f8f8f8;
-	border: 1px solid E7E7E7;
+	border: 1px solid #E7E7E7;
 }
 
 ul.nav > li { display: inline; margin-top: -63px; position: relative; z-index: 3;}
