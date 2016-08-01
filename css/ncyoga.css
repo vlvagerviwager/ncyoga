@@ -49,6 +49,11 @@ p { font-size: 16px; }
 
 nav { margin: 0 auto; position: relative; z-index: 1;}
 
+#nav-fill {
+	background-color: #f8f8f8;
+	border: 1px solid E7E7E7;
+}
+
 ul.nav > li { display: inline; margin-top: -63px; position: relative; z-index: 3;}
 
 ul.nav li a {
@@ -58,6 +63,12 @@ ul.nav li a {
     text-decoration: none;
     transition: 0.3s;
     font-size: 17px;
+    letter-spacing: 0.2px;
+    color: #555;
+}
+
+ul.nav li a:hover {
+    color: #222;
 }
 
 section { margin: 40px auto; width: 50%; }
@@ -75,13 +86,10 @@ nav { width: 700px; }
 }
 
 @media (max-width: 768px) {
-	
+
 	section { margin: 40px 15px; width: auto; }
 
-	ul.nav {
-		display: block; 
-		text-align: center;
-	}
+	ul.nav { display: block; text-align: center; }
 }
 
 @media (max-width: 544px) {
@@ -100,4 +108,6 @@ nav { width: 700px; }
 	ul.nav { display: inline; float: left; clear: left; }
 
 	nav { width: auto; }
+
+	ul.nav li a { padding: 0; }
 }
