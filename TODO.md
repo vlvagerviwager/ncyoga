@@ -1,1 +1,0 @@
-* Add photos to gallery
