@@ -8,5 +8,5 @@ https://www.ncyoga.space/
 
 ## TODO
 
-- Replace Kube CSS with CSS Grid...maybe
+- Replace Kube CSS with [CSS Grid](http://tutorialzine.com/2017/03/css-grid-vs-flexbox/)...maybe
 - Make the Gallery page nicer
