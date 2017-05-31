@@ -10,3 +10,5 @@ https://www.ncyoga.space/
 
 - Replace Kube CSS with [CSS Grid](http://tutorialzine.com/2017/03/css-grid-vs-flexbox/)...maybe
 - Make the Gallery page nicer
+- Add video(s)
+- Add social media icons to footer
