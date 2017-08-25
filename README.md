@@ -6,12 +6,12 @@ Available for studio classes, cover/sub, private classes, and corporate classes.
 
 https://www.ncyoga.space/
 
-## TODO
-
-https://github.com/zky829/ncyoga/projects/1
-
-# Tools
+## Tools
 
 - SASS
 - Kube CSS
 - Sublime Text
+
+## TODO
+
+https://github.com/zky829/ncyoga/projects/1
