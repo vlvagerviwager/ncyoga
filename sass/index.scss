@@ -1,5 +1,13 @@
+$body-font: Ubuntu;
+$body-font-fallback: 'Helvetica Neue';
+$logo-font: chocoleta;
+$logo-font-fallback: 'Georgia';
+$z-index-nav: 1;
+$z-index-nav-logo: 2;
+$z-index-nav-li: 3;
+
 @font-face {
-    font-family: Ubuntu;
+    font-family: $body-font;
     src: url('../fonts/Ubuntu-L.ttf');
 }
 
@@ -9,11 +17,11 @@
 }
 
 body, .font-chocoleta {
-	font-family: Ubuntu, 'Helvetica Neue', sans-serif;
+	font-family: $body-font, $body-font-fallback, sans-serif;
 }
 
 h1, h2, h3 {
-	font-family: Ubuntu, 'Helvetica Neue' 
+	font-family: $body-font, $body-font-fallback;
 }
 
 h1 {
@@ -33,11 +41,16 @@ p {
 }
 
 .font-chocoleta {
-	font-family: chocoleta, 'Georgia', serif;
+	font-family: $logo-font, $logo-font-fallback, serif;
 }
 
 .centered-text {
 	text-align: center;
+}
+
+#main-img {
+	opacity: 0.6;
+	margin-top: -177px;
 }
 
 #main-img-container { 
@@ -46,34 +59,30 @@ p {
 	margin-bottom: 20px;
 }
 
-#main-img {
-	opacity: 0.6;
-	margin-top: -177px;
-}
-
 .img-responsive {
-	width: 100%%;
+	width: 100%;
 	margin: 0 auto;
 	display: block;
-}
-
-#logo-nav {
-	font-family: chocoleta, 'Georgia', serif;
-	font-size: 60px;
-	color: #333;
-	text-align: center;
-	text-decoration: none;
-	margin: 30px 0 auto;
-	width: 100%;
-	display: inline-block;
-	position: relative;
-	z-index: 2;
 }
 
 nav {
 	margin: 0 auto;
 	position: relative;
-	z-index: 1;
+	z-index: $z-index-nav;
+	width: 745px;
+
+	#logo-nav {
+		font-family: $logo-font, $logo-font-fallback, serif;
+		font-size: 60px;
+		color: #333;
+		text-align: center;
+		text-decoration: none;
+		margin: 30px 0 auto;
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		z-index: $z-index-nav-logo;
+	}
 }
 
 #nav-fill {
@@ -85,7 +94,7 @@ ul.nav > li {
 	display: inline;
 	margin-top: -63px;
 	position: relative;
-	z-index: 3;
+	z-index: $z-index-nav-li;
 }
 
 ul.nav li a {
@@ -108,10 +117,6 @@ section {
 	width: 50%;
 }
 
-nav {
-	width: 745px; 
-}
-
 /* Responsive */
 
 @media (min-width: 769px) {
@@ -130,7 +135,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-
 	section {
 		margin: 40px 15px;
 		width: auto;
@@ -143,7 +147,6 @@ nav {
 }
 
 @media (max-width: 544px) {
-	
 	section {
 		margin: 40px 15px;
 	}
