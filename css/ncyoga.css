@@ -8,14 +8,37 @@
     src: url('../fonts/chocoleta.ttf');
 }
 
-body, .font-chocoleta { font-family: Ubuntu, 'Helvetica Neue', sans-serif; }
-h1, h2, h3 { font-family: Ubuntu, 'Helvetica Neue' }
-h1 { font-size: 40px; }
-h2 { font-size: 30px; }
-h3 { font-size: 24px; }
-p { font-size: 16px; }
-.font-chocoleta { font-family: chocoleta, 'Georgia', serif; }
-.centered-text { text-align: center; }
+body, .font-chocoleta {
+	font-family: Ubuntu, 'Helvetica Neue', sans-serif;
+}
+
+h1, h2, h3 {
+	font-family: Ubuntu, 'Helvetica Neue' 
+}
+
+h1 {
+	font-size: 40px; 
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+p {
+	font-size: 16px;
+}
+
+.font-chocoleta {
+	font-family: chocoleta, 'Georgia', serif;
+}
+
+.centered-text {
+	text-align: center;
+}
 
 #main-img-container { 
     width: 100%;
@@ -47,14 +70,23 @@ p { font-size: 16px; }
 	z-index: 2;
 }
 
-nav { margin: 0 auto; position: relative; z-index: 1;}
+nav {
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+}
 
 #nav-fill {
 	background-color: #f8f8f8;
 	border: 1px solid #E7E7E7;
 }
 
-ul.nav > li { display: inline; margin-top: -63px; position: relative; z-index: 3;}
+ul.nav > li {
+	display: inline;
+	margin-top: -63px;
+	position: relative;
+	z-index: 3;
+}
 
 ul.nav li a {
     display: inline-block;
@@ -71,30 +103,50 @@ ul.nav li a:hover {
     color: #222;
 }
 
-section { margin: 40px auto; width: 50%; }
+section {
+	margin: 40px auto;
+	width: 50%;
+}
 
-nav { width: 745px; }
+nav {
+	width: 745px; 
+}
 
 /* Responsive */
 
 @media (min-width: 769px) {
+	ul.nav > li {
+		margin-top: -63px;
+	}
 
-	ul.nav > li { margin-top: -63px; }
-
-	ul.nav li:nth-child(1), .nav li:nth-child(2) { float: left; margin-right: 25px; }
-	ul.nav li:nth-child(3), .nav li:nth-child(4), .nav li:nth-child(5) { float: right; margin-right: -22px; }
+	ul.nav li:nth-child(1), .nav li:nth-child(2) {
+		float: left;
+		margin-right: 25px;
+	}
+	ul.nav li:nth-child(3), .nav li:nth-child(4), .nav li:nth-child(5) {
+		float: right;
+		margin-right: -22px;
+	}
 }
 
 @media (max-width: 768px) {
 
-	section { margin: 40px 15px; width: auto; }
+	section {
+		margin: 40px 15px;
+		width: auto;
+	}
 
-	ul.nav { display: block; text-align: center; }
+	ul.nav {
+		display: block;
+		text-align: center;
+	}
 }
 
 @media (max-width: 544px) {
 	
-	section { margin: 40px 15px; }
+	section {
+		margin: 40px 15px;
+	}
 
 	#logo-nav {
 		display: block;
@@ -103,11 +155,21 @@ nav { width: 745px; }
 		margin: 30px 0 15px 15px;
 	}
 
-	ul.nav > li { display: block; margin: 10px; }
+	ul.nav > li {
+		display: block; margin: 10px;
+	}
 
-	ul.nav { display: inline; float: left; clear: left; }
+	ul.nav { 
+		display: inline;
+		float: left;
+		clear: left;
+	}
 
-	nav { width: auto; }
+	nav {
+		width: auto;
+	}
 
-	ul.nav li a { padding: 0; }
+	ul.nav li a {
+		padding: 0;
+	}
 }
