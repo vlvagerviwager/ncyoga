@@ -8,6 +8,7 @@ $z-index-nav: 1;
 $z-index-nav-logo: 2;
 $z-index-nav-li: 3;
 $center: 0 auto;
+$table-padding: 10px 30px 10px 5px;
 
 @font-face {
 	font-family: $body-font;
@@ -25,9 +26,6 @@ body {
 	// grid-template-columns: 1fr;
 	// grid-template-rows: 100%;
 	max-width: 1264px;
-	// for sticky footer
-	height: 100vh;
-	min-height: 100vh;
 	margin: $center;
 	display: grid;
 	grid-template-areas: "header"
@@ -113,6 +111,35 @@ body {
 
 		#classes {
 			grid-area: classes;
+
+			table {
+				margin: $center;
+				overflow-wrap: break-word;
+				box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+				border-collapse: collapse;
+
+				thead {
+					background: #e9e9e9;
+					border-bottom: 1px solid #666666;
+
+					th {
+						text-align: left;
+						padding: $table-padding;
+					}
+				}
+				
+				tbody {
+					tr {
+						&:nth-of-type(even) {
+							background: #e9e9e9;
+						}
+
+						td {
+							padding: $table-padding;
+						}
+					}
+				}
+			}
 		}
 
 		#testimonials {
