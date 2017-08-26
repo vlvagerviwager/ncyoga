@@ -96,7 +96,7 @@ body {
 				color: $body-text-color;
 
 				&:not(#logo-nav) {
-					margin-top: 36%;
+					margin-top: 25px;
 					font-family: $body-bold;
 					font-size: 18px;
 				}
@@ -122,67 +122,64 @@ body {
 		}
 	}
 
-	// main {
-	// 	margin-top: 132px;
+	section {
+		margin: $center;
+		margin: 0 auto 80px auto;
+	}
 
-		section {
-			margin: $center;
-			margin: 0 auto 80px auto;
-		}
+	h1 {
+		background-color: rgba(105, 36, 180, 0.08);
+		padding: 10px 0;
+	}
 
-		h1 {
-			background-color: rgba(105, 36, 180, 0.08);
-			padding: 10px 0;
-		}
+	#about {
+		display: grid;
+		grid-template-columns: 300px 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 10px;
+		margin-top: 32px;
+	}
 
-		#about {
+	#gallery {
+		width: 100%;
+
+		#photos {
 			display: grid;
-			grid-template-columns: 300px 1fr;
-			grid-template-rows: 1fr;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 100%;
 			grid-gap: 10px;
-			margin-top: 32px;
-		}
 
-		#gallery {
-			width: 100%;
-
-			#photos {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				grid-template-rows: 100%;
-				grid-gap: 10px;
-
-				img {
-					margin: $center;
-				}
+			img {
+				margin: $center;
 			}
 		}
+	}
 
-		#contact {
-			.icons {
-				display: grid;
-				grid-template-columns: repeat(4, 25%);
-				grid-template-rows: 100%;
-				margin: 0 auto 100px auto; 
-				width: 400px;
-				
-				a {
-					margin: $center;
-				}
+	#contact {
+		.icons {
+			display: grid;
+			grid-template-columns: repeat(4, 25%);
+			grid-template-rows: 100%;
+			margin: 0 auto 100px auto; 
+			width: 400px;
+			
+			a {
+				margin: $center;
+			}
 
-				.facebook-icon {
-					height: 50px;
-				}
+			.facebook-icon {
+				height: 50px;
+			}
 
-				svg {
-					fill: $body-text-color;
-				}
+			svg {
+				fill: $body-text-color;
 			}
 		}
-	// }
+	}
 }
 
 // TODO: Refactor/remove these once new typefaces chosen.
+/* Typography */
 
 h1, h2, h3 {
 	font-family: $body-font, $body-font-fallback;
@@ -221,6 +218,8 @@ figcaption {
 	color: rgba(49, 52, 57, 0.65);
 	padding-top: 10px;
 }
+
+/* Table styling */
 
 table {
 	width: 1264px;
