@@ -273,5 +273,19 @@ table {
 }
 
 @media (max-width: 810px) {
+	body {
+		header nav a {
+			&:not(#logo-nav) {
+				display: none;
+			}
+		}
 
+		#about-extended {
+			display: none;
+		}
+
+		#gallery #photos img {
+			max-width: 200px;
+		}
+	}
 }
