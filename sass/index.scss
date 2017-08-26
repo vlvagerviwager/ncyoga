@@ -82,7 +82,7 @@ body {
 
 		nav {
 			display: grid;
-			grid-template-columns: 40% 15% 15% 15% 15%;
+			grid-template-columns: 40% repeat(4, 15%);
 			grid-template-rows: 1fr;
 			z-index: $z-index-nav;
 
@@ -106,6 +106,12 @@ body {
 				text-decoration: none;
 				z-index: $z-index-nav-logo;
 			}
+		}
+	}
+
+	footer {
+		p {
+			color: #666666;
 		}
 	}
 
@@ -259,66 +265,13 @@ table {
 		table {
 			width: inherit;
 		}
+
+		header nav {
+			grid-template-columns: 33% repeat(4, 15%);
+		}
 	}
 }
 
 @media (max-width: 810px) {
-}
 
-@media (min-width: 769px) {
-	ul.nav > li {
-		margin-top: -63px;
-	}
-
-	ul.nav li:nth-child(1), .nav li:nth-child(2) {
-		float: left;
-		margin-right: 25px;
-	}
-	ul.nav li:nth-child(3), .nav li:nth-child(4), .nav li:nth-child(5) {
-		float: right;
-		margin-right: -22px;
-	}
-}
-
-@media (max-width: 768px) {
-	section {
-		margin: 40px 15px;
-		width: auto;
-	}
-
-	ul.nav {
-		display: block;
-		text-align: center;
-	}
-}
-
-@media (max-width: 544px) {
-	section {
-		margin: 40px 15px;
-	}
-
-	#logo-nav {
-		display: block;
-		width: auto;
-		float: left;
-		margin: 30px 0 15px 15px;
-	}
-
-	ul.nav > li {
-		display: block; margin: 10px;
-	}
-
-	ul.nav { 
-		display: inline;
-		float: left;
-		clear: left;
-	}
-
-	nav {
-		width: auto;
-	}
-
-	ul.nav li a {
-		padding: 0;
-	}
 }
