@@ -1,6 +1,7 @@
 /* Variables */
 
 $body-font: Karla-Regular;
+$body-bold: Karla-Bold;
 $body-font-fallback: 'Helvetica Neue';
 $logo-font: chocoleta;
 $logo-font-fallback: 'Georgia';
@@ -39,6 +40,11 @@ footer {
 @font-face {
 	font-family: $body-font;
 	src: url('../fonts/Karla-Regular.ttf');
+}
+
+@font-face {
+	font-family: $body-bold;
+	src: url('../fonts/Karla-Bold.ttf');
 }
 
 @font-face {
@@ -90,8 +96,9 @@ body {
 				color: $body-text-color;
 
 				&:not(#logo-nav) {
-					margin-top: 37%;
-					font-weight: 800;
+					margin-top: 36%;
+					font-family: $body-bold;
+					font-size: 18px;
 				}
 
 				&:hover {
@@ -222,7 +229,7 @@ table {
 	border-collapse: collapse;
 
 	thead {
-		font-weight: 400;
+		font-family: $body-bold;
 		white-space: nowrap;
 
 		th {
@@ -287,5 +294,12 @@ table {
 		#gallery #photos img {
 			max-width: 200px;
 		}
+	}
+}
+
+@media (max-width: 415px) {
+	body {
+		margin: 0 30px;
+		width: calc(100vw - 40px);
 	}
 }
