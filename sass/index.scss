@@ -9,6 +9,32 @@ $z-index-nav-logo: 2;
 $z-index-nav-li: 3;
 $center: 0 auto;
 $table-padding: 10px 30px 10px 30px;
+$body-text-color: #333333;
+
+/* grid-template-area aliases */
+header {
+	grid-area: header;
+}
+#about {
+	grid-area: about;
+}
+#classes {
+	grid-area: classes;
+}
+#testimonials {
+	grid-area: testimonials;
+}
+#gallery {
+	grid-area: gallery;
+}
+#contact {
+	grid-area: contact;
+}
+footer {
+	grid-area: footer;
+}
+
+/* Typefaces */
 
 @font-face {
 	font-family: $body-font;
@@ -22,10 +48,11 @@ $table-padding: 10px 30px 10px 30px;
 
 body {
 	font-family: $body-font, $body-font-fallback, sans-serif;
-	color: #333333;
+	color: $body-text-color;
 	// grid-template-columns: 1fr;
 	// grid-template-rows: 100%;
 	max-width: 1264px;
+	height: 100vh;
 	margin: $center;
 	display: grid;
 	grid-template-areas: "header"
@@ -36,7 +63,7 @@ body {
 						 "contact"
 						 "footer";
 	grid-template-columns: 1fr;
-	// grid-template-rows: 100px repeat(5, 1fr) 30px;
+	grid-template-rows: 100px repeat(5, auto) 30px;
 
 	h1 {
 		text-align: center;
@@ -47,7 +74,10 @@ body {
 	};
 
 	header {
-		grid-area: header;
+		position: fixed;
+		background-color: white;
+		top: 0px;
+		width: 1264px;
 		padding: 30px 0;
 
 		nav {
@@ -57,59 +87,49 @@ body {
 			z-index: $z-index-nav;
 
 			a {
-				// margin: $center;
+				color: $body-text-color;
 
 				&:not(#logo-nav) {
 					margin-top: 37%
+				}
+
+				&:hover {
+					text-decoration: underline;
 				}
 			}
 
 			#logo-nav {
 				font-family: $logo-font, $logo-font-fallback, serif;
 				font-size: 60px;
-				color: #333;
+				color: $body-text-color;
 				text-decoration: none;
 				z-index: $z-index-nav-logo;
 			}
 		}
 	}
 
-	footer {
-		grid-area: footer;
-	}
-
-	main {
-		margin-top: 30px;
+	// main {
+	// 	margin-top: 132px;
 
 		section {
 			margin: $center;
-
-			&:not(#about) {
-				margin: 100px auto;
-			}
+			margin: 0 auto 80px auto;
 		}
 
 		h1 {
-			background-color: rgba(120, 77, 167, 0.2);
+			background-color: rgba(105, 36, 180, 0.08);
 			padding: 10px 0;
 		}
 
 		#about {
-			grid-area: about;
-
 			display: grid;
 			grid-template-columns: 300px 1fr;
 			grid-template-rows: 1fr;
 			grid-gap: 10px;
-
-			#about-text p {
-				// font-size: 24px;
-			}
+			margin-top: 32px;
 		}
 
 		#classes {
-			grid-area: classes;
-
 			table {
 				width: 1264px;
 				margin: $center;
@@ -142,12 +162,8 @@ body {
 			}
 		}
 
-		#testimonials {
-			grid-area: testimonials;
-		}
-
 		#gallery {
-			grid-area: gallery;
+			width: 100%;
 
 			#photos {
 				display: grid;
@@ -163,8 +179,6 @@ body {
 		}
 
 		#contact {
-			grid-area: contact;
-
 			.icons {
 				display: grid;
 				grid-template-columns: repeat(4, 25%);
@@ -179,9 +193,13 @@ body {
 				.facebook-icon {
 					height: 50px;
 				}
+
+				svg {
+					fill: $body-text-color;
+				}
 			}
 		}
-	}
+	// }
 }
 
 // TODO: Refactor/remove these once new typefaces chosen.
@@ -204,18 +222,26 @@ h3 {
 
 p {
 	font-size: 16px;
+	margin-top: 0;
+	line-height: 1.5em;
+}
+
+figure:not(:last-child) {
+	margin-bottom: 50px;
 }
 
 blockquote {
 	padding-left: 1rem;
 	border-left: 4px solid rgba(0, 0, 0, 0.1);
-	color: rgba(49, 52, 57, 0.65);
 }
 
 figcaption {
 	font-size: 87.5%;
+	color: rgba(49, 52, 57, 0.65);
+	padding-top: 10px;
 }
 
+// TODO: Refactor.
 /* Responsive */
 
 @media (min-width: 769px) {
