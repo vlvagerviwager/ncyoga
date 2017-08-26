@@ -9,7 +9,7 @@ https://www.ncyoga.space/
 ## Tools
 
 - SASS
-- Kube CSS
+- Scout-App
 - Sublime Text
 
 ## TODO
