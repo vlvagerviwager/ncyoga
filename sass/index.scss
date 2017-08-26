@@ -90,7 +90,8 @@ body {
 				color: $body-text-color;
 
 				&:not(#logo-nav) {
-					margin-top: 37%
+					margin-top: 37%;
+					font-weight: 800;
 				}
 
 				&:hover {
@@ -129,39 +130,6 @@ body {
 			margin-top: 32px;
 		}
 
-		#classes {
-			table {
-				width: 1264px;
-				margin: $center;
-				box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-				border-collapse: collapse;
-
-				thead {
-					font-weight: 800;
-					white-space: nowrap;
-
-					th {
-						text-align: left;
-						padding: $table-padding;
-					}
-				}
-				
-				tbody {
-					overflow-wrap: break-word;
-
-					tr {
-						&:nth-of-type(odd) {
-							background: #f8f8f8;
-						}
-
-						td {
-							padding: $table-padding;
-						}
-					}
-				}
-			}
-		}
-
 		#gallery {
 			width: 100%;
 
@@ -172,7 +140,6 @@ body {
 				grid-gap: 10px;
 
 				img {
-					max-width: 400px;
 					margin: $center;
 				}
 			}
@@ -233,6 +200,7 @@ figure:not(:last-child) {
 blockquote {
 	padding-left: 1rem;
 	border-left: 4px solid rgba(0, 0, 0, 0.1);
+	line-height: 1.5em;
 }
 
 figcaption {
@@ -241,8 +209,61 @@ figcaption {
 	padding-top: 10px;
 }
 
-// TODO: Refactor.
+table {
+	width: 1264px;
+	margin: $center;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+	border-collapse: collapse;
+
+	thead {
+		font-weight: 400;
+		white-space: nowrap;
+
+		th {
+			text-align: left;
+			padding: $table-padding;
+		}
+	}
+	
+	tbody {
+		overflow-wrap: break-word;
+
+		tr {
+			&:nth-of-type(odd) {
+				background: #f8f8f8;
+			}
+
+			td {
+				padding: $table-padding;
+			}
+		}
+	}
+}
+
 /* Responsive */
+
+@media (max-width: 1263px) {
+	body {
+		margin: 0 50px;
+		width: calc(100vw - 100px);
+ 	 
+ 	 	header {
+			width: 100%;
+ 	 	}
+
+		section {
+			width: inherit;
+			margin: 0;
+		}
+
+		table {
+			width: inherit;
+		}
+	}
+}
+
+@media (max-width: 810px) {
+}
 
 @media (min-width: 769px) {
 	ul.nav > li {
