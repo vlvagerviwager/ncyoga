@@ -1,6 +1,6 @@
 /* Variables */
 
-$body-font: Ubuntu;
+$body-font: Karla-Regular;
 $body-font-fallback: 'Helvetica Neue';
 $logo-font: chocoleta;
 $logo-font-fallback: 'Georgia';
@@ -11,7 +11,7 @@ $center: 0 auto;
 
 @font-face {
 	font-family: $body-font;
-	src: url('../fonts/Ubuntu-L.ttf');
+	src: url('../fonts/Karla-Regular.ttf');
 }
 
 @font-face {
@@ -25,7 +25,11 @@ body {
 	// grid-template-columns: 1fr;
 	// grid-template-rows: 100%;
 	max-width: 1264px;
+	// for sticky footer
+	height: 100vh;
+	min-height: 100vh;
 	margin: $center;
+	display: grid;
 	grid-template-areas: "header"
 						 "about"
 						 "classes"
@@ -33,6 +37,10 @@ body {
 						 "gallery"
 						 "contact"
 						 "footer";
+	grid-template-columns: 1fr;
+	grid-template-rows: 100px 
+                      repeat(5, 1fr)
+                      30px;
 
 	h1 {
 		text-align: center;
@@ -44,18 +52,13 @@ body {
 
 	header {
 		grid-area: header;
-		// grid-column-start: 1;
-		// grid-column-end: 3;
-		// background-color: #AED9E7;
 		padding: 30px 0;
 
 		nav {
 			display: grid;
 			grid-template-columns: 40% 15% 15% 15% 15%;
-			grid-template-rows: 100%;
-			grid-gap: 2%;
+			grid-template-rows: 1fr;
 			z-index: $z-index-nav;
-			width: 745px;
 
 			a {
 				// margin: $center;
@@ -99,12 +102,12 @@ body {
 			grid-area: about;
 
 			display: grid;
-			grid-template-columns: 50% 50%;
-			grid-template-rows: 100%;
-			grid-gap: 2%;
+			grid-template-columns: 300px 1fr;
+			grid-template-rows: 1fr;
+			grid-gap: 10px;
 
 			#about-text p {
-				font-size: 24px;
+				// font-size: 24px;
 			}
 		}
 
@@ -115,14 +118,15 @@ body {
 		#testimonials {
 			grid-area: testimonials;
 		}
+
 		#gallery {
 			grid-area: gallery;
 
 			#photos {
 				display: grid;
-				grid-template-columns: 50% 50%;
+				grid-template-columns: repeat(2, 1fr);
 				grid-template-rows: 100%;
-				grid-gap: 2%;
+				grid-gap: 10px;
 
 				img {
 					max-width: 400px;
@@ -134,7 +138,7 @@ body {
 		#contact {
 			grid-area: contact;
 
-			margin: $center;
+			margin: 0 auto 100px auto; 
 			width: 400px;
 
 			p {
@@ -143,7 +147,7 @@ body {
 
 			.icons {
 				display: grid;
-				grid-template-columns: 25% 25% 25% 25%;
+				grid-template-columns: repeat(4, 25%);
 				grid-template-rows: 100%;
 				
 				a {
