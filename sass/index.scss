@@ -1,3 +1,5 @@
+/* Variables */
+
 $body-font: Ubuntu;
 $body-font-fallback: 'Helvetica Neue';
 $logo-font: chocoleta;
@@ -5,20 +7,158 @@ $logo-font-fallback: 'Georgia';
 $z-index-nav: 1;
 $z-index-nav-logo: 2;
 $z-index-nav-li: 3;
+$center: 0 auto;
 
 @font-face {
-    font-family: $body-font;
-    src: url('../fonts/Ubuntu-L.ttf');
+	font-family: $body-font;
+	src: url('../fonts/Ubuntu-L.ttf');
 }
 
 @font-face {
-    font-family: chocoleta;
-    src: url('../fonts/chocoleta.ttf');
+	font-family: chocoleta;
+	src: url('../fonts/chocoleta.ttf');
 }
 
-body, .font-chocoleta {
+body {
 	font-family: $body-font, $body-font-fallback, sans-serif;
+	color: #333333;
+	// grid-template-columns: 1fr;
+	// grid-template-rows: 100%;
+	max-width: 1264px;
+	margin: $center;
+	grid-template-areas: "header"
+						 "about"
+						 "classes"
+						 "testimonials"
+						 "gallery"
+						 "contact"
+						 "footer";
+
+	h1 {
+		text-align: center;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	header {
+		grid-area: header;
+		// grid-column-start: 1;
+		// grid-column-end: 3;
+		// background-color: #AED9E7;
+		padding: 30px 0;
+
+		nav {
+			display: grid;
+			grid-template-columns: 40% 15% 15% 15% 15%;
+			grid-template-rows: 100%;
+			grid-gap: 2%;
+			z-index: $z-index-nav;
+			width: 745px;
+
+			a {
+				// margin: $center;
+
+				&:not(#logo-nav) {
+					margin-top: 37%
+				}
+			}
+
+			#logo-nav {
+				font-family: $logo-font, $logo-font-fallback, serif;
+				font-size: 60px;
+				color: #333;
+				text-decoration: none;
+				z-index: $z-index-nav-logo;
+			}
+		}
+	}
+
+	footer {
+		grid-area: footer;
+	}
+
+	main {
+		margin-top: 30px;
+
+		section {
+			margin: $center;
+
+			&:not(#about) {
+				margin: 100px auto;
+			}
+		}
+
+		h1 {
+			background-color: #efefef;
+			padding: 10px 0;
+		}
+
+		#about {
+			grid-area: about;
+
+			display: grid;
+			grid-template-columns: 50% 50%;
+			grid-template-rows: 100%;
+			grid-gap: 2%;
+
+			#about-text p {
+				font-size: 24px;
+			}
+		}
+
+		#classes {
+			grid-area: classes;
+		}
+
+		#testimonials {
+			grid-area: testimonials;
+		}
+		#gallery {
+			grid-area: gallery;
+
+			#photos {
+				display: grid;
+				grid-template-columns: 50% 50%;
+				grid-template-rows: 100%;
+				grid-gap: 2%;
+
+				img {
+					max-width: 400px;
+					margin: $center;
+				}
+			}
+		}
+
+		#contact {
+			grid-area: contact;
+
+			margin: $center;
+			width: 400px;
+
+			p {
+				margin: $center;
+			}
+
+			.icons {
+				display: grid;
+				grid-template-columns: 25% 25% 25% 25%;
+				grid-template-rows: 100%;
+				
+				a {
+					margin: $center;
+				}
+
+				.facebook-icon {
+					height: 50px;
+				}
+			}
+		}
+	}
 }
+
+// TODO: Refactor/remove these once new typefaces chosen.
 
 h1, h2, h3 {
 	font-family: $body-font, $body-font-fallback;
@@ -38,83 +178,6 @@ h3 {
 
 p {
 	font-size: 16px;
-}
-
-.font-chocoleta {
-	font-family: $logo-font, $logo-font-fallback, serif;
-}
-
-.centered-text {
-	text-align: center;
-}
-
-#main-img {
-	opacity: 0.6;
-	margin-top: -177px;
-}
-
-#main-img-container { 
-    width: 100%;
-    overflow: hidden; 
-	margin-bottom: 20px;
-}
-
-.img-responsive {
-	width: 100%;
-	margin: 0 auto;
-	display: block;
-}
-
-nav {
-	margin: 0 auto;
-	position: relative;
-	z-index: $z-index-nav;
-	width: 745px;
-
-	#logo-nav {
-		font-family: $logo-font, $logo-font-fallback, serif;
-		font-size: 60px;
-		color: #333;
-		text-align: center;
-		text-decoration: none;
-		margin: 30px 0 auto;
-		width: 100%;
-		display: inline-block;
-		position: relative;
-		z-index: $z-index-nav-logo;
-	}
-}
-
-#nav-fill {
-	background-color: #f8f8f8;
-	border: 1px solid #E7E7E7;
-}
-
-ul.nav > li {
-	display: inline;
-	margin-top: -63px;
-	position: relative;
-	z-index: $z-index-nav-li;
-}
-
-ul.nav li a {
-    display: inline-block;
-    text-align: center;
-    padding: 35px 20px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
-    letter-spacing: 0.2px;
-    color: #555;
-}
-
-ul.nav li a:hover {
-    color: #222;
-}
-
-section {
-	margin: 40px auto;
-	width: 50%;
 }
 
 /* Responsive */
