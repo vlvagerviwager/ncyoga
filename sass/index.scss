@@ -1,24 +1,190 @@
-$body-font: Ubuntu;
+/* Variables */
+
+$body-font: Karla-Regular;
+$body-bold: Karla-Bold;
 $body-font-fallback: 'Helvetica Neue';
 $logo-font: chocoleta;
 $logo-font-fallback: 'Georgia';
 $z-index-nav: 1;
 $z-index-nav-logo: 2;
 $z-index-nav-li: 3;
+$center: 0 auto;
+$table-padding: 10px 30px;
+$table-padding-small: 10px 20px;
+$body-text-color: #333333;
+
+/* grid-template-area aliases */
+header {
+	grid-area: header;
+}
+#about {
+	grid-area: about;
+}
+#classes {
+	grid-area: classes;
+}
+#testimonials {
+	grid-area: testimonials;
+}
+#gallery {
+	grid-area: gallery;
+}
+#contact {
+	grid-area: contact;
+}
+footer {
+	grid-area: footer;
+}
+
+/* Typefaces */
 
 @font-face {
-    font-family: $body-font;
-    src: url('../fonts/Ubuntu-L.ttf');
+	font-family: $body-font;
+	src: url('../fonts/Karla-Regular.ttf');
 }
 
 @font-face {
-    font-family: chocoleta;
-    src: url('../fonts/chocoleta.ttf');
+	font-family: $body-bold;
+	src: url('../fonts/Karla-Bold.ttf');
 }
 
-body, .font-chocoleta {
+@font-face {
+	font-family: chocoleta;
+	src: url('../fonts/chocoleta.ttf');
+}
+
+body {
 	font-family: $body-font, $body-font-fallback, sans-serif;
+	color: $body-text-color;
+	max-width: 1264px;
+	height: 100vh;
+	margin: $center;
+	display: grid;
+	grid-template-areas: "header"
+						 "about"
+						 "classes"
+						 "testimonials"
+						 "gallery"
+						 "contact"
+						 "footer";
+	grid-template-columns: 1fr;
+	grid-template-rows: 100px repeat(5, auto) 30px;
+
+	h1 {
+		text-align: center;
+	}
+
+	a {
+		text-decoration: none;
+	};
+
+	header {
+		position: fixed;
+		background-color: white;
+		top: 0px;
+		width: 1264px;
+		padding: 30px 0;
+
+		nav {
+			display: grid;
+			grid-template-columns: 40% repeat(4, 15%);
+			grid-template-rows: 1fr;
+			z-index: $z-index-nav;
+
+			a {
+				color: $body-text-color;
+
+				&:not(#logo-nav) {
+					margin-top: 25px;
+					font-family: $body-bold;
+					font-size: 18px;
+				}
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			#logo-nav {
+				font-family: $logo-font, $logo-font-fallback, serif;
+				font-size: 60px;
+				color: $body-text-color;
+				text-decoration: none;
+				z-index: $z-index-nav-logo;
+			}
+		}
+	}
+
+	footer {
+		p {
+			color: #666666;
+		}
+	}
+
+	section {
+		margin: $center;
+		margin: 0 auto 80px auto;
+	}
+
+	h1 {
+		background-color: rgba(105, 36, 180, 0.08);
+		padding: 10px 0;
+	}
+
+	#about {
+		display: grid;
+		grid-template-columns: 300px 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 10px;
+		margin-top: 32px;
+
+		#about-image {
+			img {
+				width: 300px;
+			}
+		}
+	}
+
+	#gallery {
+		width: 100%;
+
+		#photos {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 100%;
+			grid-gap: 10px;
+
+			img {
+				margin: $center;
+			}
+		}
+	}
+
+	#contact {
+		.icons {
+			display: grid;
+			grid-template-columns: repeat(4, 25%);
+			grid-template-rows: 100%;
+			margin: 0 auto 100px auto; 
+			width: 400px;
+			
+			a {
+				margin: $center;
+			}
+
+			.facebook-icon {
+				height: 50px;
+			}
+
+			svg {
+				fill: $body-text-color;
+			}
+		}
+	}
 }
+
+// TODO: Refactor/remove these once new typefaces chosen.
+/* Typography */
 
 h1, h2, h3 {
 	font-family: $body-font, $body-font-fallback;
@@ -38,141 +204,142 @@ h3 {
 
 p {
 	font-size: 16px;
+	margin-top: 0;
+	line-height: 1.5em;
 }
 
-.font-chocoleta {
-	font-family: $logo-font, $logo-font-fallback, serif;
+figure:not(:last-child) {
+	margin-bottom: 50px;
 }
 
-.centered-text {
-	text-align: center;
+blockquote {
+	padding-left: 1rem;
+	border-left: 4px solid rgba(0, 0, 0, 0.1);
+	line-height: 1.5em;
 }
 
-#main-img {
-	opacity: 0.6;
-	margin-top: -177px;
+figcaption {
+	font-size: 87.5%;
+	color: rgba(49, 52, 57, 0.65);
+	padding-top: 10px;
 }
 
-#main-img-container { 
-    width: 100%;
-    overflow: hidden; 
-	margin-bottom: 20px;
-}
+/* Table styling */
 
-.img-responsive {
-	width: 100%;
-	margin: 0 auto;
-	display: block;
-}
+table {
+	width: 1264px;
+	margin: $center;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+	border-collapse: collapse;
 
-nav {
-	margin: 0 auto;
-	position: relative;
-	z-index: $z-index-nav;
-	width: 745px;
+	thead {
+		font-family: $body-bold;
+		white-space: nowrap;
 
-	#logo-nav {
-		font-family: $logo-font, $logo-font-fallback, serif;
-		font-size: 60px;
-		color: #333;
-		text-align: center;
-		text-decoration: none;
-		margin: 30px 0 auto;
-		width: 100%;
-		display: inline-block;
-		position: relative;
-		z-index: $z-index-nav-logo;
+		th {
+			text-align: left;
+			padding: $table-padding;
+		}
 	}
-}
+	
+	tbody {
+		overflow-wrap: break-word;
 
-#nav-fill {
-	background-color: #f8f8f8;
-	border: 1px solid #E7E7E7;
-}
+		tr {
+			&:nth-of-type(odd) {
+				background: #f8f8f8;
+			}
 
-ul.nav > li {
-	display: inline;
-	margin-top: -63px;
-	position: relative;
-	z-index: $z-index-nav-li;
-}
-
-ul.nav li a {
-    display: inline-block;
-    text-align: center;
-    padding: 35px 20px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
-    letter-spacing: 0.2px;
-    color: #555;
-}
-
-ul.nav li a:hover {
-    color: #222;
-}
-
-section {
-	margin: 40px auto;
-	width: 50%;
+			td {
+				padding: $table-padding;
+			}
+		}
+	}
 }
 
 /* Responsive */
 
-@media (min-width: 769px) {
-	ul.nav > li {
-		margin-top: -63px;
-	}
+@media (max-width: 1263px) {
+	body {
+		margin: 0 50px;
+		width: calc(100vw - 100px);
+ 	 
+ 	 	header {
+			width: 100%;
+ 	 	}
 
-	ul.nav li:nth-child(1), .nav li:nth-child(2) {
-		float: left;
-		margin-right: 25px;
-	}
-	ul.nav li:nth-child(3), .nav li:nth-child(4), .nav li:nth-child(5) {
-		float: right;
-		margin-right: -22px;
+		section {
+			width: inherit;
+			margin: 0;
+		}
+
+		table {
+			width: inherit;
+		}
+
+		header nav {
+			grid-template-columns: 33% repeat(4, 15%);
+		}
 	}
 }
 
-@media (max-width: 768px) {
-	section {
-		margin: 40px 15px;
-		width: auto;
+@media (max-width: 810px) {
+	body {
+		header nav a {
+			&:not(#logo-nav) {
+				display: none;
+			}
+		}
+
+		#about {
+			display: block;
+
+			#about-image {
+				img {
+					float: left;
+					margin-right: 10px;
+					width: 180px;
+				}
+			}
+		}
+
+		#about-extended {
+			display: none;
+		}
+
+		#gallery #photos img {
+			max-width: 150px;
+		}
+
+		#contact .icons {
+			width: auto;
+		}
 	}
 
-	ul.nav {
-		display: block;
-		text-align: center;
+	blockquote {
+		margin: 0;
+	}
+
+	table {
+		thead {
+			th {
+				padding: $table-padding-small;
+			}
+		}
+		
+		tbody {
+			tr {
+				td {
+					padding: $table-padding-small;
+				}
+			}
+		}
 	}
 }
 
-@media (max-width: 544px) {
-	section {
-		margin: 40px 15px;
-	}
-
-	#logo-nav {
-		display: block;
-		width: auto;
-		float: left;
-		margin: 30px 0 15px 15px;
-	}
-
-	ul.nav > li {
-		display: block; margin: 10px;
-	}
-
-	ul.nav { 
-		display: inline;
-		float: left;
-		clear: left;
-	}
-
-	nav {
-		width: auto;
-	}
-
-	ul.nav li a {
-		padding: 0;
+@media (max-width: 415px) {
+	body {
+		margin: 0 30px;
+		width: calc(100vw - 40px);
 	}
 }
