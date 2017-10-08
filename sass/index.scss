@@ -146,11 +146,14 @@ body {
 	}
 
 	#gallery {
+		width: 100%;
+
 		#photos {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: 100%;
-			grid-gap: 10px;
+			grid-gap: 100px;
+			margin: 0 227px;
 
 			img {
 				margin: $center;
@@ -278,6 +281,11 @@ table {
 		header nav {
 			grid-template-columns: 33% repeat(4, 15%);
 		}
+
+		#gallery #photos {
+			grid-gap: 10px;
+			margin: 0;
+		}
 	}
 }
 
@@ -305,8 +313,10 @@ table {
 			display: none;
 		}
 
-		#gallery #photos img {
-			max-width: 150px;
+		#gallery #photos {
+			img {
+				max-width: 150px;
+			}
 		}
 
 		#contact .icons {
